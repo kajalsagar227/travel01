@@ -1,0 +1,25 @@
+body{
+    height: 100vh;
+}
+.box:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.712);
+    
+}
+.box{
+    transform: scale(0.8);
+    animation: popUp 1s ease-out forwards;
+}
+@keyframes popUp {
+    0% {
+        opacity: 1;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.flex{
+    background-color: rgb(253, 247, 247);
+}
