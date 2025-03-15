@@ -38,8 +38,7 @@ function Second() {
     </Container>
     <br />
     <br />
-    <br />
-    <br />
+    
     </>
   )
 }
