@@ -15,13 +15,13 @@ function Fifthpage() {
                </Card><br /><br /><br />
      <Container>
       <Row>
-        <Col><Image src="./Public/Images/images2.png" thumbnail /></Col>
-        <Col><Image src="./Public/Images/india.png" thumbnail /></Col>
+        <Col><Image src="Images/images2.png" thumbnail /></Col>
+        <Col><Image src="Images/india.png" thumbnail /></Col>
       </Row>
       <Row>
-        <Col><Image src="./Public/Images/image12.png" thumbnail /></Col>
-        <Col><Image src="./Public/Images/image7.png" thumbnail /></Col>
-        <Col><Image src="./Public/Images/image9.png" thumbnail /></Col>
+        <Col><Image src="Images/image12.png" thumbnail /></Col>
+        <Col><Image src="Images/image7.png" thumbnail /></Col>
+        <Col><Image src="Images/image9.png" thumbnail /></Col>
       </Row>
     </Container>
     </div>
