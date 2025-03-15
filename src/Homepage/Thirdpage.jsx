@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Container, Row, Col, Card, Button, ListGroup } from "react-bootstrap";
 import { IoLocation } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 import { FaUser, FaStar } from "react-icons/fa";
 
 const Thirdpage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const destinations = [
     {
       src: "/Images/india3.png",
@@ -28,18 +34,17 @@ const Thirdpage = () => {
 
   return (
     <Container className="mt-4" style={{ backgroundColor: "#f8f9fa" }}>
-      <Card style={{ display: "flex", alignItems: "center",border:"none" }}>
-                   <Card.Header style={{ fontFamily: "cursive", fontWeight: "bold", color: "grey" }}>Packages</Card.Header>
-                   <Card.Title style={{ fontFamily: "cursive", fontWeight: "bold", color: "black", fontSize: "2rem" }}>Our Packages
-                   </Card.Title>
-                   </Card>
-                   <br /><br /><br />
+      <Card style={{ display: "flex", alignItems: "center", border: "none" }} data-aos="fade-up">
+        <Card.Header style={{ fontFamily: "cursive", fontWeight: "bold", color: "grey" }}>Packages</Card.Header>
+        <Card.Title style={{ fontFamily: "cursive", fontWeight: "bold", color: "black", fontSize: "2rem" }}>Our Packages</Card.Title>
+      </Card>
+      <br /><br /><br />
       <Row className="g-4 justify-content-around">
         {destinations.map((item, index) => {
           const [isHovered, setIsHovered] = useState(false);
 
           return (
-            <Col key={index} md={4} className="d-flex justify-content-center">
+            <Col key={index} md={4} className="d-flex justify-content-center" data-aos="zoom-in">
               <Card style={{ width: "20rem", border: "none" }}>
                 <div
                   style={{
@@ -93,9 +98,9 @@ const Thirdpage = () => {
         })}
       </Row>
     </Container>
-    
   );
 };
+
 const colStyle = {
   border: "1px solid grey",
   display: "flex",
@@ -103,6 +108,5 @@ const colStyle = {
   justifyContent: "center",
   padding: "5px",
 };
-
 
 export default Thirdpage;
