@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Sixthpage = () => {
+  useEffect(() => {
+          if (typeof window !== "undefined") {
+            AOS.init({ duration: 1000, once: true });
+          }
+        }, []);
   const images = [
     { src: "/Images/image1.png", title: "Paris" },
     { src: "/Images/image3.png", title: "Thailand" },
@@ -19,7 +27,7 @@ const Sixthpage = () => {
                      <Card.Title style={{ fontFamily: "cursive", fontWeight: "bold", color: "black", fontSize: "2rem" }}>Popular Destination
                      </Card.Title>
                    </Card><br /><br /><br />
-    <Container >
+    <Container data-aos="fade-in">
       
       {images.map((img, index) =>
         index % 3 === 0 && (
