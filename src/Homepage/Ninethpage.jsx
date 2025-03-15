@@ -3,22 +3,26 @@ import { Button, Card, Carousel, Col, Container, ListGroup, Row } from 'react-bo
 import { FaStar, FaUser } from 'react-icons/fa'
 import { IoLocation } from 'react-icons/io5'
 import { SlCalender } from 'react-icons/sl'
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const testimonials = [
   {
     name: "John Doe",
     review: "Amazing service! Highly recommend.",
-    image: "/Images/pass.png",
+    image: "./Public/Images/pass.png",
   },
   {
     name: "Sarah Smith",
     review: "Best experience ever! Loved it.",
-    image: "/Images/pass2.png",
+    image: "./Public/Images/pass2.png",
   },
   {
     name: "Mike Johnson",
     review: "Very professional and reliable.",
-    image: "/Images/pass3.png",
+    image: "./Public/Images/pass3.png",
   },
   
 ];
@@ -60,11 +64,16 @@ const testimonials2 = [
 ];
 
 function Eighthpage() {
+   useEffect(() => {
+      if (typeof window !== "undefined") {
+        AOS.init({ duration: 1000, once: true });
+      }
+    }, []);
   return (
     <div>
         <br /> <br /><br />
       
-      <Card style={{ display: "flex", alignItems: "center", border: "none" }}>
+      <Card style={{ display: "flex", alignItems: "center", border: "none" }} >
                 <Card.Header style={{ fontFamily: "cursive", fontWeight: "bold", color: "grey" }}>Testimonial</Card.Header>
                 <Card.Title style={{ fontFamily: "cursive", fontWeight: "bold", color: "black", fontSize: "2rem" }}>Our Clients Say!!!</Card.Title>
                 <br />
@@ -79,7 +88,7 @@ function Eighthpage() {
 
 <div className="container my-5" >
       <h2 className="text-center mb-4"></h2>
-      <div className="row">
+      <div className="row" data-aos="zoom-in">
         {testimonials.map((testimonial, index) => (
           <div className="col-md-4" key={index}>
             <div className="card text-center shadow p-3">
