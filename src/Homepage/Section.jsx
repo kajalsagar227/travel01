@@ -1,14 +1,17 @@
 import React from 'react';
 import { Button, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
-
-
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import{ useEffect, useState } from 'react';
 
 function Section() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, []);
   return (
     <>
-<div className="position-relative">
+<div className="position-relative" >
   <Image 
     src="/Images/india3.png" 
     className="custom-img w-100" 
@@ -19,7 +22,7 @@ function Section() {
       filter: "brightness(60%)"
     }}
   />
-  <div className="position-absolute top-50 start-50 translate-middle text-white text-center mt-1">
+  <div className="position-absolute top-50 start-50 translate-middle text-white text-center mt-1" data-aos="zoom-in">
     <h1 className="text-uppercase fw-bold responsive-text fs-1" style={{ fontFamily: 'cursive',fontWeight:"bold",textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)"  }}>
       Enjoy Your Vacation With Us
     </h1>
