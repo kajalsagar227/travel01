@@ -1,32 +1,46 @@
-import React from 'react'
-import { Button, ButtonGroup, Card, Col, Container, Form, ListGroup, Row } from 'react-bootstrap'
-import { FaStar, FaUser } from 'react-icons/fa';
-import { IoLocation } from "react-icons/io5";
-import { SlCalender } from 'react-icons/sl';
+import React, { useEffect } from 'react';
+import { Button, Container, Form } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Eighthpage() {
+  
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      AOS.init({ duration: 1000, once: true });
+    }
+  }, []);
+
   return (
     <>
-    <br /><br /><br /><br /><br />
-    <Container fluid style={{ position: "relative", textAlign: "center" ,backgroundColor: "#f8f9fa"  }}>
-    <Image src="/Images/images2.png" fluid style={{filter: "brightness(40%)",height: "100vh",
-      objectFit: "cover",}}/>
+      <br /><br /><br /><br /><br />
+      <Container fluid style={{ position: "relative", textAlign: "center", backgroundColor: "#f8f9fa" }}>
+        <Image 
+          src="/Images/images2.png" 
+          fluid 
+          style={{ filter: "brightness(40%)", height: "100vh", objectFit: "cover" }} 
+          data-aos="fade-in"
+        />
+        <div 
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            padding: "30px",
+            borderRadius: "10px",
+            width: "90%",
+            maxWidth: "500px",
+            color: "white",
+          }} 
+          data-aos="zoom-in"
+        >
+          <h2 className="text-uppercase fw-bold fs-1" style={{ fontFamily: 'cursive', fontWeight: "bold", textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)" }}>
+            Book Now
+          </h2>
 
-      <div style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",// Dark transparent background
-          padding: "30px",
-          borderRadius: "10px",
-          width: "90%",
-          maxWidth: "500px",
-          color: "white",
-        }}>
-          <h2 className="text-uppercase fw-bold responsive-text fs-1" style={{ fontFamily: 'cursive',fontWeight:"bold",textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)"  }}>Book Now</h2>
-          <Form>
+          <Form data-aos="fade-up">
             <Form.Group className="mb-3">
               <Form.Label>Your Name</Form.Label>
               <Form.Control type="text" placeholder="Enter your name" required />
@@ -47,15 +61,14 @@ function Eighthpage() {
               <Form.Control type="date" required />
             </Form.Group>
 
-            <Button type="submit" variant='primary' className="w-100" style={{background:"none",border:"2px solid black"}}>
+            <Button type="submit" variant='primary' className="w-100" style={{ background: "none", border: "2px solid black" }}>
               Book Now
             </Button>
           </Form>
         </div>
-    </Container>
-    
+      </Container>
     </>
-      )
+  )
 }
 
-export default Eighthpage
+export default Eighthpage;
