@@ -8,17 +8,17 @@ const testimonials = [
   {
     name: "John Doe",
     review: "Amazing service! Highly recommend.",
-    image: "./Public/Images/pass.png",
+    image: "/Images/pass.png",
   },
   {
     name: "Sarah Smith",
     review: "Best experience ever! Loved it.",
-    image: "./Public/Images/pass2.png",
+    image: "/Images/pass2.png",
   },
   {
     name: "Mike Johnson",
     review: "Very professional and reliable.",
-    image: "./Public/Images/pass3.png",
+    image: "/Images/pass3.png",
   },
   
 ];
@@ -26,17 +26,17 @@ const testimonials1 = [
   {
     name: "John Doe",
     review: "Amazing service! Highly recommend.",
-    image: "./Public/Images/pass.png",
+    image: "/Images/pass.png",
   },
   {
     name: "Sarah Smith",
     review: "Best experience ever! Loved it.",
-    image: "./Public/Images/pass2.png",
+    image: "/Images/pass2.png",
   },
   {
     name: "Mike Johnson",
     review: "Very professional and reliable.",
-    image: "./Public/Images/pass3.png",
+    image: "/Images/pass3.png",
   },
   
 ];
@@ -44,17 +44,17 @@ const testimonials2 = [
   {
     name: "John Doe",
     review: "Amazing service! Highly recommend.",
-    image: "./Public/Images/pass.png",
+    image: "/Images/pass.png",
   },
   {
     name: "Sarah Smith",
     review: "Best experience ever! Loved it.",
-    image: "./Public/Images/pass2.png",
+    image: "/Images/pass2.png",
   },
   {
     name: "Mike Johnson",
     review: "Very professional and reliable.",
-    image: "./Public/Images/pass3.png",
+    image: "/Images/pass3.png",
   },
   
 ];
