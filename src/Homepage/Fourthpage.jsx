@@ -1,31 +1,145 @@
 import React from 'react'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap'
-import '../css/Fourthpage.css'
+import { Card, Col, Container, Row } from 'react-bootstrap'
+import { BsHouseDoorFill } from "react-icons/bs";
+import { FaHotel, FaTruckMonster, FaUser } from 'react-icons/fa';
+import { IoIosSettings } from 'react-icons/io';
+import { MdCardTravel, MdMedicalServices } from 'react-icons/md';
+import { SiFoursquarecityguide } from 'react-icons/si';
+import { useState } from "react";
 
 function Fourthpage() {
+  const [bgColor, setBgColor] = useState("white");
   return (
-    <div>
-      <Card style={{display:"flex", alignItems: "center",border:"none" }}>
-        <Card.Header style={{fontFamily: "cursive",fontWeight: "bold", color:"grey"}}>Destination</Card.Header>
-        <Card.Title style={{fontFamily: "cursive",fontWeight: "bold", color:"black", fontSize:"2rem"}}>Popular Destination</Card.Title>
-        </Card><br /><br /><br />
-        <Container className='image-con'>
-      <Row style={{display:"flex", alignItems:"self-start", justifyContent:"end",gap:"0%"}}>
-        <Col sm={8} >
-        <img  className='con' src="./Public/Images/ind.png" alt="" style={{height:"50%",width:"50%",marginLeft:"13%"}}/>
-        <Button variant="dark" style={{marginLeft:"-8%",marginTop:"43%"}}>India</Button>
+    <>
+    <br />
+    <br />
+    <br /><br /><br />
+     <div className='flex' >
+           <Card style={{ display: "flex", alignItems: "center",border:"none" }}>
+             <Card.Header style={{ fontFamily: "cursive", fontWeight: "bold", color: "grey" }}>Services</Card.Header>
+             <Card.Title style={{ fontFamily: "cursive", fontWeight: "bold", color: "black", fontSize: "2rem" }}>Our Services
+             </Card.Title>
+           </Card><br /><br /><br />
+           <Container  >
+      <Row className="g-4"> {/* Increased gap for better spacing */}
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}> {/* Equal height */}
+            <Card.Body className="d-flex flex-column justify-content-between">
+              <BsHouseDoorFill style={{ fontSize: "4rem"}} />
+              <Card.Title style={{fontFamily:"cursive"}}>Flight Booking</Card.Title>
+              <Card.Text>
+                ✅ Search & compare flights from multiple airlines  
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
-        <Col sm={4}>
-        <img className='con' src="./Public/Images/indo.png" alt=""style={{height:"70%",width:"170%",marginLeft:"-80%"}} />
-        <Button variant="dark" style={{marginLeft:"65%",marginTop:"-20%"}}>Thailand</Button></Col>
 
-        <Col sm={30}><img className='con' src="./Public/Images/new.png" alt="" style={{height:"2%",width:"33%", marginLeft:"8.7%",marginTop:"-29%"}}/>
-        <Button variant="dark" style={{marginLeft:"-8%",marginTop:"-16%"}}>New York</Button></Col>
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}>
+            <Card.Body className="d-flex flex-column justify-content-between">
+            <FaHotel style={{ fontSize: "4rem" }} />
+              <Card.Title style={{fontFamily:"cursive"}}>Hotel Reservation</Card.Title>
+              <Card.Text>
+                ✅ Listings of hotels, resorts, hostels, and vacation rentals  
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
 
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}>
+            <Card.Body className="d-flex flex-column justify-content-between">
+            <FaUser style={{ fontSize: "4rem" }} />
+              <Card.Title style={{fontFamily:"cursive"}}> Tour Packages</Card.Title>
+              <Card.Text>
+                ✅ Pre-planned tour packages (honeymoon, adventure, luxury)  
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}>
+            <Card.Body className="d-flex flex-column justify-content-between">
+            <IoIosSettings style={{ fontSize: "4rem" }} />
+              <Card.Title style={{fontFamily:"cursive"}}>Travel Insurance</Card.Title>
+              <Card.Text>
+                ✅ Medical & trip cancellation coverage  
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}>
+            <Card.Body className="d-flex flex-column justify-content-between">
+            <MdCardTravel style={{ fontSize: "4rem" }} />
+              <Card.Title style={{fontFamily:"cursive"}}>Luxury Travel</Card.Title>
+              <Card.Text>
+                ✅ Luxury yacht rentals & private charters  
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}>
+            <Card.Body className="d-flex flex-column justify-content-between">
+            <SiFoursquarecityguide style={{ fontSize: "4rem" }} />
+              <Card.Title>Tour Guides</Card.Title>
+              <Card.Text style={{fontFamily:"cursive"}}>
+                ✅ Personal travel stories & user-generated content  
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}>
+            <Card.Body className="d-flex flex-column justify-content-between">
+            <MdMedicalServices style={{ fontSize: "4rem" }} />
+              <Card.Title>24/7 Service</Card.Title>
+              <Card.Text style={{fontFamily:"cursive"}}>
+                ✅ Assistance with trip modifications & cancellations  
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3} sm={6} xs={12}>
+          <Card className="h-100" style={{ backgroundColor: bgColor, transition: "0.3s ease-in-out" }}
+      onMouseEnter={() => setBgColor("#f8f9fa")}
+      onMouseLeave={() => setBgColor("white")}>
+            <Card.Body className="d-flex flex-column justify-content-between">
+              <FaTruckMonster style={{ fontSize: "4rem" }} />
+              <Card.Title>Adventure Booking</Card.Title>
+              <Card.Text style={{fontFamily:"cursive"}}>
+                ✅ Adventure sports (scuba diving, skydiving, trekking, etc.)  
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
-      
-    </Container><br /><br /><br /><br /><br />
+    </Container>
     </div>
+    <br />
+    <br /><br />
+    <br />
+    </>
   )
 }
 

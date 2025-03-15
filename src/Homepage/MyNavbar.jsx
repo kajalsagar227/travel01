@@ -1,40 +1,36 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import '../css/Header.css'
 import { GiButterfly } from "react-icons/gi";
 
 const MyNavbar = () => {
-    return (
-        <>
-        <div className="header">
-            {/* <div className="container"> */}
-            <Navbar expand="lg" col="3" bg="black" variant="dark" className="px-3 nav">
-                <Container style={{gap:".3%"}}>
-                    {/* Brand Name */}
-                    <GiButterfly style={{color:"white",fontSize:"2rem"}}/>
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
-                    <Navbar.Brand href="#" style={{fontFamily:"cursive"}}>WorldWander</Navbar.Brand>
-                   
+  return (
+    <Navbar expand="sm" className="bg-dark navbar-dark fixed-top">
+      <Container fluid>
+        <Navbar.Brand onClick={() => handleScroll("home")} className="text-white fw-bold" style={{ cursor: "pointer" }}>
+          <GiButterfly className="me-2 text-warning" size={30} />
+          WorldWander
+        </Navbar.Brand>
 
-                    {/* Toggle Button */}
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-                    {/* Collapsible Menu */}
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            <Nav.Link href="#">Home</Nav.Link>
-                            <Nav.Link href="#">About</Nav.Link>
-                            <Nav.Link href="#">Services</Nav.Link>
-                            <Nav.Link href="#">Packages</Nav.Link>
-                            <Nav.Link href="#">Contact</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-            </div>
-        </>
-    );
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="ms-auto">
+            <Nav.Link onClick={() => handleScroll("home")} className="text-white" style={{ cursor: "pointer" }}>Home</Nav.Link>
+            <Nav.Link onClick={() => handleScroll("about")} className="text-white" style={{ cursor: "pointer" }}>About</Nav.Link>
+            <Nav.Link onClick={() => handleScroll("destinations")} className="text-white" style={{ cursor: "pointer" }}>Destinations</Nav.Link>
+            <Nav.Link onClick={() => handleScroll("tours")} className="text-white" style={{ cursor: "pointer" }}>Tours</Nav.Link>
+            <Nav.Link onClick={() => handleScroll("contact")} className="text-white" style={{ cursor: "pointer" }}>Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 };
 
 export default MyNavbar;

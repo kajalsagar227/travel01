@@ -1,65 +1,75 @@
-import React from 'react'
-import { Button, Card, Col, Dropdown, DropdownButton, FloatingLabel, Form, InputGroup, Row } from 'react-bootstrap'
-import '../css/Sixthpage.css'
+import { useState } from "react";
+import { Container, Row, Col, Image, Card } from "react-bootstrap";
 
-function Sixthpage() {
+const Sixthpage = () => {
+  const images = [
+    { src: "/Images/image1.png", title: "Paris" },
+    { src: "/Images/image3.png", title: "Thailand" },
+    { src: "/Images/image7.png", title: "Greece" },
+    { src: "/Images/image8.png", title: "Spain" },
+    { src: "/Images/image9.png", title: "China" },
+    { src: "/Images/image11.png", title: "Iceland" },
+  ];
+
   return (
-    <div className='six'>
-        <Card className='image-bg'>
-
-    <Row style={{width:"50%",marginLeft:"2%",marginTop:"10%"}}>
-      <h1 className='hh'>  Book A Tour</h1>
-      <Row className="g-2" >
-      <Col md >
-        <FloatingLabel  controlId="floatingInputGrid" label="Your Name" >
-          <Form.Control  style={{backgroundColor:"transparent"}} type="email" placeholder="name@example.com" />
-        </FloatingLabel>
-      </Col>
-      <Col md>
-         <FloatingLabel controlId="floatingInputGrid" label="Your Email">
-          <Form.Control style={{backgroundColor:"transparent"}} type="email" placeholder="name@example.com" />
-        </FloatingLabel>
-      </Col>
-    </Row>
-    <Row className="g-2">
-      <Col md>
-        <FloatingLabel controlId="floatingInputGrid" label="Date">
-          <Form.Control  style={{backgroundColor:"transparent"}} type="email" placeholder="00-00-0000" />
-        </FloatingLabel>
-      </Col>
-      <Col md>
-         
-      <Dropdown >
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Destination
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1"> Destination 1</Dropdown.Item>
-        <Dropdown.Item href="#/action-2"> Destination 2</Dropdown.Item>
-        <Dropdown.Item href="#/action-3"> Destination 3</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-       
-      </Col>
-    </Row>
-    <Row className="g-2">
-    <FloatingLabel controlId="floatingInputGrid" label="Special Request">
-          <Form.Control style={{backgroundColor:"transparent"}} type="email" placeholder="name@example.com" />
-        </FloatingLabel>
-    </Row>
-    
-      </Row>
-      <Row className="g-2">
-      <Button variant="outline-secondary" style={{width:"49%",height:"70%",marginLeft:"2.3%",marginTop:"3%",fontSize:"2rem",fontFamily:'cursive'}}>Book Now</Button>
-      </Row>
+    <div style={{ backgroundColor: "#f8f9fa" }}>
+<Card style={{ display: "flex", alignItems: "center",border:"none" }}>
+                     <Card.Header style={{ fontFamily: "cursive", fontWeight: "bold", color: "grey" }}>Destination
+                     </Card.Header>
+                     <Card.Title style={{ fontFamily: "cursive", fontWeight: "bold", color: "black", fontSize: "2rem" }}>Popular Destination
+                     </Card.Title>
+                   </Card><br /><br /><br />
+    <Container >
       
-      
-    </Card>
+      {images.map((img, index) =>
+        index % 3 === 0 && (
+          <Row key={index} className="mb-4">
+            {images.slice(index, index + 3).map((item, subIndex) => {
+              const [isHovered, setIsHovered] = useState(false);
 
-    
+              return (
+                <Col key={subIndex} md={4} style={{ textAlign: "center" }}>
+                  <div
+                    style={{
+                      display: "inline-block",
+                      overflow: "hidden",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <Image
+                      src={item.src}
+                      thumbnail
+                      style={{
+                        transition: "transform 0.3s ease-in-out",
+                        transform: isHovered ? "scale(1.1)" : "scale(1)",
+                        boxShadow: isHovered
+                          ? "0px 8px 16px rgba(0, 0, 0, 0.2)"
+                          : "none",
+                      }}
+                      onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}
+                    />
+                  </div>
+                  <Card.Title
+                    style={{
+                      fontFamily: "cursive",
+                      fontWeight: "bold",
+                      color: "black",
+                      fontSize: "1.4rem",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {item.title}
+                  </Card.Title>
+                </Col>
+              );
+            })}
+          </Row>
+        )
+      )}
+    </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Sixthpage
+export default Sixthpage;

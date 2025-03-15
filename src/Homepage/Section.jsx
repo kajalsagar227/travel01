@@ -1,43 +1,49 @@
-import React, { useState } from 'react';
-import { Button, Card, Form, InputGroup, ThemeProvider } from 'react-bootstrap';
-import '../css/Section.css';
+import React from 'react';
+import { Button, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 
 
 
+
 function Section() {
-    // const [objstyle,SetObjstyle] = useState(<Styleing/>)
   return (
-    
-    <div className='section'>
-      <Card className="text-center position-relative d-md-block ">
-  <div className="position">
-    <Image src="./Public/Images/india3.png" className="w-100 img-filter"/>
-    <div className="position-absolute top-50 start-50 translate-middle text-white" style={{marginTop:"-10%"}}>
-      <h1 className="h1" data-aos="fade-up" style={{marginLeft:"-25%"}}>Enjoy Your Vacation With Us</h1>
-      <h2 className="h2" data-aos="fade-up" style={{marginTop:"5  %"}}>The world is too big to stay in one place.</h2>
-    </div>
-    <Card.Body>
-    <InputGroup className="mb-3" style={{marginTop:"-25%"}}>
-      <Form.Control
-        placeholder="Eg: India"
-        aria-label="Eg: India"
-        aria-describedby="basic-addon2"
-      />
-      <Button variant="outline-secondary" id="button-addon2" style={{ backgroundColor: "black" }}>
-        Search
-      </Button>
-    </InputGroup>
-  </Card.Body>
+    <>
+<div className="position-relative">
+  <Image 
+    src="/Images/india3.png" 
+    className="custom-img w-100" 
+    alt="India Image"
+    style={{
+      height: "100vh",
+      objectFit: "cover",
+      filter: "brightness(60%)"
+    }}
+  />
+  <div className="position-absolute top-50 start-50 translate-middle text-white text-center mt-1">
+    <h1 className="text-uppercase fw-bold responsive-text fs-1" style={{ fontFamily: 'cursive',fontWeight:"bold",textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)"  }}>
+      Enjoy Your Vacation With Us
+    </h1>
+    <p className="text-uppercase fw-bold" style={{ fontFamily: 'cursive',fontWeight:"bold",textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)"  }}>
+      Explore the beauty of the world
+    </p>
+    <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
   </div>
-
   
-</Card>
-
-
-    
-    </div>
-  )
+</div>
+<br />
+<br />
+<br />
+<br />
+    </>
+  );
 }
 
-export default Section
+export default Section;
